@@ -10,6 +10,14 @@ This is a bot for Jake. When a user joins, it asks them for their name, company 
 ```
 
 `config.json` - the bot's configuration
+```angular2
+{
+  "commandprefix": "?",
+  "servername": "Server Name Here",
+  "founderroleid": 714763870165663746,
+  "investorroleid": 714763959076388946
+}
+```
 
 
 
