@@ -22,7 +22,7 @@ This is a bot for Jake. When a user joins, it asks them for their name, company 
 
 
 ### License
-You are free to use, share, modify, redistribute, monetize, or otherwise use this code, in pat or in full, with the situplation that derivatives give partial credit to the original author.
+You are free to use, share, modify, redistribute, monetize, or otherwise use this code, in part or in full, with the stipulation that derivatives give partial credit to the original author.
 
 ex. "Code originally written by QueueBot, modified by <your_name_here>"
 
