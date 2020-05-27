@@ -182,26 +182,26 @@ async def when_member_joins(member):
             job = await get_user_job(member)
             continue
 
-    nickname = "{} [{}] [{}]".format(username, companyname, job)
-    if len(nickname) > 32:
-        if job.lower() == "founder":
-            nickname = "{} [{}] [🛠]".format(username, companyname)
-        elif job.lower() == "investor":
-            nickname = "{} [{}] [💵]".format(username, companyname)
+    if job.lower() == "founder":
+        nickname = "{} [{}] [🛠]".format(username, companyname)
+    elif job.lower() == "investor":
+        nickname = "{} [{}] [💵]".format(username, companyname)
 
+    if len(nickname) > 32:
+        nickname = "{} [{}]".format(username, companyname)
         if len(nickname) > 32:
-            nickname = "{} [{}]".format(username, companyname)
-            if len(nickname) > 32:
-                await member.send("Error while changing nickname. Please message the server owner for help.")
-                nickname = None
+            await member.send("Error while changing nickname. Please message the server owner for help.")
+            nickname = None
 
     if nickname is not None:
         await member.edit(nick=nickname)
 
     if job.lower() == "founder":
-        await member.add_roles(member.guild.get_role(config["founderroleid"]))
+        await member.add_roles(member.guild.get_role(config["founderroleid"]), member.guild.get_role(config["onboardedroleid"]))
     elif job.lower() == "investor":
-        await member.add_roles(member.guild.get_role(config["investorroleid"]))
+        await member.add_roles(member.guild.get_role(config["investorroleid"]), member.guild.get_role(config["onboardedroleid"]))
+
+    await member.send("Onboarding complete! Welcome to {}".format(config["servername"]))
 
 
 with open('token.json', 'r') as f:
