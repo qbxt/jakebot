@@ -183,9 +183,9 @@ async def when_member_joins(member):
             continue
 
     if job.lower() == "founder":
-        nickname = "{} [{}] [🛠]".format(username, companyname)
+        nickname = "{} [{}] 🛠".format(username, companyname)
     elif job.lower() == "investor":
-        nickname = "{} [{}] [💵]".format(username, companyname)
+        nickname = "{} [{}] 💵".format(username, companyname)
 
     if len(nickname) > 32:
         nickname = "{} [{}]".format(username, companyname)
